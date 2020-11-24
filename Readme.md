@@ -11,7 +11,7 @@ TurtleBot simulated in a Gazebo environment.
 ```
 1. ROS melodic
 2. Catkin
-3. Ubuntu 10.04 LTS
+3. Ubuntu 18.04 LTS
 4. TurtleBot Gazebo
 ```
 Install ROS melodic and setup catkin workspace by following this tutrial:
