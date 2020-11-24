@@ -1,0 +1,10 @@
+<launch>
+    <arg name="startRecording" default="false" />
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_world.launch"/>
+    <node pkg="turtlebot_gazebo_walker" name="turtlebot_gazebo_walker" type="turtlebot_gazebo_walker"
+          output="screen" launch-prefix="gnome-terminal --command" />
+    <node pkg="beginner_tutorials" name="listener" type="listener"/>
+    <node pkg="rosbag" name="rosbag_record_all" type="record" respawn="true"
+          output="screen" args="-a --output-name=$(find turtlebot_gazebo_walker)/results/turtlebot_gazebo_walker.bag
+          -x /camera/(.*)" if="$(arg startRecording)"/>
+</launch>
